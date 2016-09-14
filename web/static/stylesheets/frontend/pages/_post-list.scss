@@ -38,6 +38,13 @@
         font-size: 1.8em;
         margin-bottom: 1em;
       }
+
+      img {
+        padding: 5px;
+        border: 1px solid darken($gray-lighter, 6.25%);
+        display: inline-block;
+        margin: 1em auto;
+      }
     }
 
     .read-more-link {
