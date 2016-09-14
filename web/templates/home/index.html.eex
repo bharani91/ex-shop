@@ -1,0 +1,14 @@
+<section class="home">
+  <div class="hero">
+    <h2 >
+      Free & Premium Bootstrap Templates
+    </h2>
+    <p>
+      We provide high quality design &amp; web resources at an affordable price.
+    </p>
+  </div>
+
+  <%= render Ap.ProductView, "list.html", conn: @conn, products: @products %>
+
+  <%= render Ap.SharedView, "footer_subscribe_widget.html", conn: @conn %>
+</section>

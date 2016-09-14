@@ -1,0 +1,20 @@
+.browser {
+  border: 2px solid $dark;
+  border-radius: $border-radius-base;
+  background: $gray-lighter;
+
+  .browser-header {
+    padding: 1px 5px;
+    height: 25px;
+    border-bottom: 2px solid $dark;
+
+    .button {
+      height: 8px;
+      width: 8px;
+      border-radius: 512px;
+      border: 2px solid $dark;
+      display: inline-block;
+      margin-right: 1px;
+    }
+  }
+}

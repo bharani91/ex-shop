@@ -1,0 +1,32 @@
+$body-bg:                          $light;
+$brand-primary:                    $primary;
+
+$text-color:                       $dark;
+
+$navbar-default-color:             #838383;
+$navbar-default-bg:                $white;
+$navbar-default-border:            darken($navbar-default-bg, 15%);
+
+// Navbar links
+$navbar-height:                            50px;
+$navbar-default-link-color:                #838383;
+$navbar-default-link-hover-color:          $dark;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         $dark;
+$navbar-default-link-active-bg:            transparent;
+$navbar-default-link-disabled-color:       #ccc;
+$navbar-default-link-disabled-bg:          transparent;
+
+
+// $container-lg:     1140px;
+// $font-family-sans-serif: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$text-color: #333;
+$headings-font-weight: 700;
+
+$border-radius-base:        2px;
+$border-radius-large:       2px;
+$border-radius-small:       2px;
+
+$input-height-base:         40px;

@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h2><%= @support_message.subject %></h2>
+</div>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @support_message.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @support_message.email %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @support_message.content %>
+  </li>
+
+</ul>

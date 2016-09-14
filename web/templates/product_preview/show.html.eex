@@ -1,0 +1,13 @@
+<header id="header">
+  <a class="back" href="/">
+    &larr;
+  </a>
+  <p class="title">
+    <%= @product.title %>
+  </p>
+  <a class="btn" href="<%= product_path(@conn, :show, @product.slug) %>">
+    Download &rarr;
+  </a>
+</header>
+
+<iframe id="wrapper" frameborder="0" allowfullscreen src="<%= @product.demo_url %>" width="100%"></iframe>

@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h2>Static Pages</h2>
+</div>
+
+
+<%= if @pages == [] do %>
+<div class="jumbotron text-center">
+  <p class="text-muted lead">
+    No pages yet.
+  </p>
+</div>
+<% else %>
+<div class="table-responsive">
+  <table class="table table-bordered products-table">
+    <thead>
+      <tr>
+        <th width="40%">Title</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for page <- @pages do %>
+      <tr>
+        <td>
+          <h3>
+            <%= page.title %> <br>
+            <small>
+              <%= page.slug %>
+            </small>
+          </h3>
+        </td>
+
+        <td class="text-left">
+          <%= link "Show", to: admin_page_path(@conn, :show, page), class: "btn btn-default btn-sm" %>
+          <%= link "Edit", to: admin_page_path(@conn, :edit, page), class: "btn btn-primary btn-sm" %>
+          <%= link "Delete", to: admin_page_path(@conn, :delete, page), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-sm" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>

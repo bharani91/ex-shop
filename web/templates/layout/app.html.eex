@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= render_existing(@view_module, "meta." <> @view_template, assigns) || render(Ap.LayoutView, "meta.html", assigns) %>
+
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/frontend.css") %>">
+    <link rel="dns-prefetch" href="//res.cloudinary.com">
+
+    <%= render Ap.LayoutView, "common_social_meta.html" %>
+    <%= render_existing(@view_module, "social_meta." <> @view_template, assigns) || render(Ap.LayoutView, "social_meta.html", assigns) %>
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/images/favicon.png" sizes="16x16" type="image/png">
+  </head>
+
+  <body>
+
+    <%= render Ap.SharedView, "header.html", conn: @conn, product_categories: @product_categories %>
+
+    <div class="container main-container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= show_flash(@conn) %>
+          <%= render @view_module, @view_template, assigns %>
+        </div>
+      </div>
+    </div>
+
+    <%= render Ap.SharedView, "footer.html", conn: @conn %>
+
+    <script src="<%= static_path(@conn, "/js/frontend.js") %>"></script>
+  </body>
+</html>

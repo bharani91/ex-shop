@@ -1,0 +1,63 @@
+<%= if @products != [] do %>
+  <div class="products-container">
+    <%=  for {product, id} <- Enum.with_index @products do %>
+    <div class="product-item">
+      <div class="row">
+        <%= if product.product_images != [] do %>
+          <div class="<%= alternate_class_name(id, 7, 'push') %>">
+            <div class="product-image-container">
+              <div class="browser">
+                <div class="browser-header">
+                  <span class="button"></span>
+                  <span class="button"></span>
+                  <span class="button"></span>
+                </div>
+                <a href="<%= product_path(@conn, :show, product.slug) %>">
+                  <img src="<%= featured_image_url(product.product_images) %>" alt="<%= product.title %>" class="img-responsive" />
+                </a>
+              </div>
+
+              <span class="price price-round">
+                <%= readable_price(product.base_price) %>
+              </span>
+            </div>
+          </div><!-- col md 7 -->
+        <div class="<%= alternate_class_name(id, 5, 'pull') %>">
+        <% else %>
+        <div class="col-md-12">
+        <% end %>
+
+          <h3 class="product-title">
+            <a href="<%= product_path(@conn, :show, product.slug) %>">
+              <%= product.title %>
+            </a>
+          </h3>
+
+          <div class="product-content">
+            <p>
+              <%= product.extract %>
+            </p>
+          </div>
+
+          <div class="product-cta">
+            <%= link to: product_path(@conn, :show, product.slug), class: "btn btn-cta" do %>
+              Preview & Purchase &rarr;
+            <% end %>
+          </div>
+        </div><!-- col md 5 -->
+      </div>
+
+    </div>
+    <% end %>
+  </div><!-- products-container -->
+<% else %>
+<div class="coming-soon-box">
+  <span class="main-icon glyphicon glyphicon-gift"></span>
+  <h3>
+    Coming soon.
+  </h3>
+  <p>
+    We are working aggresively to add more resources to our collection.
+  </p>
+</div>
+<% end %>

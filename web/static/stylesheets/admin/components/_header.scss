@@ -1,0 +1,33 @@
+.main-header {
+  margin-bottom: 0;
+
+  .nav {
+    li.btn-container {
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      > .btn {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+    }
+
+    .navbar-form {
+      .btn {
+        margin-top: 4px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.page-header {
+  h2 {
+    color: $text-muted;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 6px 0;
+  }
+}

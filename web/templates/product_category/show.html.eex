@@ -1,0 +1,14 @@
+<section class="category-show">
+  <div class="page-header">
+    <h2 >
+      <%= @category.title %>
+    </h2>
+    <p>
+      <%= @category.description %>
+    </p>
+  </div>
+
+  <%= render Ap.ProductView, "list.html", conn: @conn, products: @category.products %>
+
+  <%= render Ap.SharedView, "footer_subscribe_widget.html", conn: @conn %>
+</section>

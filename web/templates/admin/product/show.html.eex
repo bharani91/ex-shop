@@ -1,0 +1,104 @@
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="page-header">
+      <h2>
+        <%= @product.title %> <br>
+        <small>
+          <%= @product.slug %>
+        </small>
+      </h2>
+    </div><!-- page-heading -->
+
+    <%= if @product.extract do %>
+      <p class="lead">
+        <%= @product.extract %>
+      </p>
+    <% end %>
+
+
+    <hr>
+
+    <div class="content">
+      <%= raw @product.content %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="list-group">
+      <div class="list-group-item list-group-heading">
+        <strong>Categorized under</strong>
+      </div>
+      <%= for category <- @product.product_categories do %>
+        <%= link category.title, to: admin_product_category_path(@conn, :show, category), class: "list-group-item" %>
+      <% end %>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>
+          Purchase Details
+          (<%= @product.vendor %>)
+        </strong>
+      </div>
+
+      <div class="panel-body">
+
+        <%= if @product.demo_url do %>
+          <%= link "View Demo", to: @product.demo_url, class: "btn btn-primary btn-block", target: "_blank" %>
+        <% end %>
+
+        <hr>
+
+        <h4>Variants</h4>
+        <div class="list-group">
+          <%= for variant <- @product.variants do %>
+            <h5 class="list-group-item-heading"><%= variant.title %></h5>
+            <p class="list-group-item-text">
+              <%= variant.description %>
+            </p>
+
+            <%= link "Purchase ($#{variant.price})", to: variant.purchase_url, target: "_blank" %>
+            <hr>
+          <% end %>
+        </div>
+      </div>
+    </div><!-- panel -->
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>SEO Settings</strong>
+      </div>
+
+      <div class="panel-body">
+        <h5>
+          Page Title
+        </h5>
+
+        <p>
+          <%= @product.page_title %>
+        </p>
+
+        <hr>
+
+        <h5>
+          Meta Description
+        </h5>
+
+        <p>
+          <%= @product.meta_description %>
+        </p>
+
+      </div>
+    </div><!-- panel -->
+
+
+  </div>
+</div>
+
+
+  <%= link "Edit", to: admin_product_path(@conn, :edit, @product), class: "btn btn-default" %>
+
+  <%= link "Delete", to: admin_product_path(@conn, :delete, @product), class: "btn btn-danger", data: [confirm: "Are you sure?"], method: :delete %>

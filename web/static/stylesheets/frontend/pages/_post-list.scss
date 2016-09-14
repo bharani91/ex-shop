@@ -1,0 +1,62 @@
+.post-container {
+  margin-top: 2em;
+  @media(min-width: $screen-sm-max) {
+    padding-right: 2em;
+  }
+
+  .post-item {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    .post-meta {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      color: lighten($text-muted, 15%);
+    }
+    .post-featured-image {
+      margin-bottom: 3em;
+    }
+    .post-title {
+      word-spacing: 1px;
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 0.2em;
+      transition: all 300ms ease-in;
+      font-size: 3.5em;
+      a {
+        color: inherit;
+        border: none;
+        &:hover {
+          color: $primary;
+          border-bottom-color: $secondary
+        }
+      }
+    }
+
+    .post-content {
+      > p:first-child {
+        font-size: 1.8em;
+        margin-bottom: 1em;
+      }
+    }
+
+    .read-more-link {
+      margin: 2em 0;
+    }
+  }
+}
+
+
+.blog-sidebar {
+  margin-top: 3em;
+}
+
+.post-list {
+  .post-item {
+    border-bottom: 2px solid darken($light, 6.25%);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

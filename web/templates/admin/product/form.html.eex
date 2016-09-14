@@ -1,0 +1,168 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            Product Details
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :title, class: "control-label" %>
+            <%= text_input f, :title, class: "form-control", data: [sluggify: "#product-slug-input"] %>
+            <%= error_tag f, :title %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :product_categories, "Category", class: "control-label" %>
+            <%= multiple_select f, :product_categories, @categories, class: "form-control", selected: Enum.map(@changeset.data.product_categories, &(&1.id))%>
+            <%= error_tag f, :product_categories %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :extract, class: "control-label" %>
+            <%= textarea f, :extract, class: "form-control" %>
+            <%= error_tag f, :extract %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :content, class: "control-label" %>
+            <%= textarea f, :content, class: "form-control", id: "editor" %>
+            <%= error_tag f, :content %>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-body bg-warning">
+              <%= checkbox f, :featured %>
+              <%= label f, :featured, "Mark as featured?", class: "control-label" %>
+
+              <%= error_tag f, :featured %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- col-md-8 -->
+
+    <div class="col-md-4">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            SEO Settings
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :slug, class: "control-label" %>
+            <%= text_input f, :slug, class: "form-control js-slug-field", id: "product-slug-input" %>
+            <%= error_tag f, :slug %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :page_title, class: "control-label" %>
+            <%= text_input f, :page_title, class: "form-control" %>
+            <%= error_tag f, :page_title %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :meta_description, class: "control-label" %>
+            <%= textarea f, :meta_description, class: "form-control" %>
+            <%= error_tag f, :meta_description %>
+          </div>
+        </div>
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            Purchase Details
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :base_price, class: "control-label" %>
+            <%= number_input f, :base_price, class: "form-control" %>
+            <%= error_tag f, :base_price %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :vendor, class: "control-label" %>
+            <%= select f, :vendor, Ap.Product.available_vendors, prompt: "Where is it being sold?", class: "form-control" %>
+            <%= error_tag f, :vendor %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :demo_url, class: "control-label" %>
+            <%= text_input f, :demo_url, class: "form-control" %>
+            <%= error_tag f, :demo_url %>
+          </div>
+
+        </div>
+      </div><!-- panel-->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>Variants</strong>
+        </div>
+
+        <div class="panel-body">
+          <div id="variants-form-list">
+            <%= inputs_for f, :variants, fn variant -> %>
+              <div class="variant-form-item">
+                <div class="form-group">
+                  <%= label variant, :title, class: "control-label" %>
+                  <%= text_input variant, :title, class: "form-control" %>
+                  <%= error_tag variant, :title %>
+                </div>
+                <div class="form-group">
+                  <%= label variant, :purchase_url, class: "control-label" %>
+                  <%= text_input variant, :purchase_url, class: "form-control" %>
+                  <%= error_tag variant, :purchase_url %>
+                </div>
+                <div class="form-group">
+                  <%= label variant, :price, class: "control-label" %>
+                  <%= number_input variant, :price, class: "form-control" %>
+                  <%= error_tag variant, :price %>
+                </div>
+
+                <div class="form-group">
+                  <%= label variant, :description, class: "control-label" %>
+                  <%= textarea variant, :description, class: "form-control" %>
+                  <%= error_tag variant, :description %>
+                </div>
+
+                <%= if variant.model.id do %>
+                  <div class="form-group">
+                    <%= checkbox variant, :delete %>
+                    <%= label variant, :delete, "Delete?" %>
+                  </div>
+                <% end %>
+              </div><!-- variants-form-item -->
+            <% end %>
+          </div><!-- variants-form-list-->
+          <%= link_to_add_variant %>
+        </div>
+      </div>
+
+    </div><!-- col-md-3 -->
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= submit "Submit", class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+
+<% end %>

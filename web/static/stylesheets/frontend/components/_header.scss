@@ -1,0 +1,144 @@
+.main-header {
+  background: $dark;
+  height: 95px;
+  padding: 20px;
+
+  a {
+    position: relative;
+    #logo {
+      text-indent: -9999px;
+      background: url("../assets/images/logo.svg") left top no-repeat;
+      height: 55px;
+      width: 185px;
+      display: inline-block;
+      transition: opacity 0.3s ease-in;
+      filter: blur(0px);
+    }
+
+    .description  {
+      background: $dark;
+      color: #fff;
+      text-indent: 0;
+      position: absolute;
+      top: 100%;
+      left: -5%;
+      width: 110%;
+      font-size: 12px;
+      opacity: 0;
+      padding: 0 5px;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+      font-weight: 500;
+    }
+
+    @media(min-width: $screen-sm-min) {
+      &:hover {
+        #logo {
+          opacity: 0.9;
+          filter: blur(2px);
+        }
+
+        .description {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+
+    &:active {
+      #logo {
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+
+
+.navbar {
+  margin-bottom: 0px;
+  .nav {
+    font-weight: $headings-font-weight;
+
+    li.active > a {
+      @media(min-width: $grid-float-breakpoint) {
+        border-bottom: 2px solid $dark;
+      }
+    }
+
+    .newsletter-btn {
+      margin-top: -1px;
+      span {
+        display: inline-block;
+        font-weight: bold;
+        color: $primary;
+        padding-bottom: 1px;
+        border-bottom: 2px solid $primary;
+        transition: all 0.3s ease-in;
+      }
+
+      &:hover {
+        span {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+  }
+}
+@media(min-width: $grid-float-breakpoint) {
+  .navbar {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+
+    .container {
+      padding-left: 0;
+    }
+
+    .navbar-collapse {
+      padding-left: 0;
+    }
+
+    .more-menu-item {
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .dropdown {
+      .dropdown-menu {
+        box-shadow: none;
+        border-top: none;
+        background: $navbar-default-bg;
+      }
+    }
+  }
+
+  .show-for-collapsed {
+    display: none;
+  }
+
+  .show-for-uncollapsed {
+    display: inline-block;
+  }
+}
+
+@media(max-width: $grid-float-breakpoint) {
+  .navbar-text {
+    padding-left: 15px;
+  }
+
+  .show-for-collapsed {
+    display: inline-block;
+  }
+
+  .show-for-uncollapsed {
+    display: none;
+  }
+}
+
+
+.page-header {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  text-align: center;
+}

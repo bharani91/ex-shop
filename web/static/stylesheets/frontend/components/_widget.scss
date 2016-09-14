@@ -1,0 +1,39 @@
+.widget {
+  padding: 20px;
+  border-radius: $border-radius-base;
+  border: 1px solid;
+  &.widget-secondary {
+    background: $white;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.6em;
+    border-bottom: 2px solid $text-color;
+    span {
+      margin-top: 0.5em;
+      display: block;
+      text-transform: none;
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.4;
+  }
+
+
+  &.subscribe-widget {
+    form {
+      margin: 2em 0;
+    }
+    .meta {
+      color: $text-muted;
+    }
+  }
+}

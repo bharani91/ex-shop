@@ -1,0 +1,18 @@
+.home {
+  .hero {
+    padding-bottom: 4em;
+    text-align: center;
+  }
+
+  &.newsletter-subscribe {
+    margin: 3em auto;
+
+    .footer-subscribe-widget {
+      padding-top: 0;
+      .hero {
+        padding-bottom: 2em;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h2>Listing support messages</h2>
+</div>
+
+<%= if @support_messages == [] do %>
+  <div class="jumbotron text-center">
+    <p class="lead text-muted">All caught up. No new support messages.</p>
+  </div>
+<% else %>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="50%">Subject</th>
+          <th>From</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+    <%= for support_message <- @support_messages do %>
+        <tr>
+          <td>
+            <h3>
+              <%= support_message.subject %>
+            </h3>
+          </td>
+          <td>
+            <strong>
+              <%= support_message.name %>
+            </strong>
+            <br>
+            <%= support_message.email %>
+          </td>
+
+          <td><%= support_message.content %></td>
+
+          <td class="text-right">
+            <%= link "Show", to: admin_support_message_path(@conn, :show, support_message), class: "btn btn-default btn-xs" %>
+            <%= link "Delete", to: admin_support_message_path(@conn, :delete, support_message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

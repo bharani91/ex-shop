@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h2>
+        <%= @page.title %> <br>
+        <small>
+          <%= @page.slug %>
+        </small>
+      </h2>
+    </div><!-- page-heading -->
+
+
+    <div class="content">
+      <%= raw @page.content %>
+    </div>
+
+  </div>
+
+</div>
+
+<hr>
+
+<%= link "Edit", to: admin_page_path(@conn, :edit, @page), class: "btn btn-default" %>
+
+<%= link "Delete", to: admin_page_path(@conn, :delete, @page), class: "btn btn-danger", data: [confirm: "Are you sure?"], method: :delete %>

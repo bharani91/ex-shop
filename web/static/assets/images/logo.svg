@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="182px" height="57px" viewBox="0 0 182 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Portrait" transform="translate(-408.000000, -19.000000)">
+            <g id="logo" transform="translate(407.000000, 9.000000)">
+                <path d="M12.5,51 L35.5217285,51" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M145.5,51 L168.521729,51" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+                <text id="AUTHENTIC" font-family="Cubano-Regular, Cubano" font-size="37" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="0" y="37">AUTHENTIC</tspan>
+                </text>
+                <text id="Pixels-Copy-2" stroke="#2F2F2F" stroke-width="6" font-family="Wisdom-Script, Wisdom Script" font-size="39" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="44" y="64">Pixels</tspan>
+                </text>
+                <text id="Pixels-Copy-3" font-family="Wisdom-Script, Wisdom Script" font-size="39" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="44" y="64">Pixels</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

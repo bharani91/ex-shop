@@ -1,0 +1,28 @@
+<aside class="blog-sidebar">
+  <div class="widget widget-secondary subscribe-widget" data-sticky>
+    <h3 class="widget-title text-center">
+      Subscribe
+      <span>and get a <em>free</em> Bootstrap template</span>
+    </h3>
+
+    <p>
+      Join our 125+ subscriber strong community to get access to exclusive free resources, regular updates to our themes, tips, deals and lots more.
+    </p>
+
+    <form action="//authenticpixels.us14.list-manage.com/subscribe/post?u=32a81f969627f2c976efef542&amp;id=b2bb29422d" method="post" target="_blank">
+
+      <div class="form-group">
+        <input placeholder="Enter your email" type="email" name="EMAIL" class="form-control">
+      </div>
+
+      <input type="submit" value="Subscribe" class="btn btn-primary">
+
+    </form>
+
+    <p class="meta">
+      <small>
+        Your email will be used to get you a weekly newsletter. Don't worry, we hate spam too.
+      </small>
+    </p>
+  </div>
+</aside>

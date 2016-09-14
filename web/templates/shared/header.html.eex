@@ -1,0 +1,78 @@
+<header class="main-header">
+  <div class="text-center">
+    <a href="/" title="Authentic Pixels - Free & Premium Web Resources">
+      <div id="logo">
+        Authentic Pixels
+      </div>
+
+      <p class="description">
+        Free & Premium Web Resources
+      </p>
+    </a>
+  </div>
+</header>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <span class="navbar-text show-for-collapsed">Free & Premium Web Resources</span>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="<%= Ap.LayoutView.active_class(@conn, "/") %>">
+          <a href="/">Home</a>
+        </li>
+
+        <%= for {title, slug} <- @product_categories do %>
+          <li class="<%= Ap.LayoutView.active_class(@conn, product_category_path(@conn, :show, slug)) %>">
+            <%= link title, to: product_category_path(@conn, :show, slug) %>
+          </li>
+        <% end %>
+
+        <li class="<%= Ap.LayoutView.active_class(@conn, support_message_path(@conn, :new)) %>">
+          <a href="<%= support_message_path(@conn, :new) %>">Contact & Support</a>
+        </li>
+
+        <li class="<%= Ap.LayoutView.active_class(@conn, post_path(@conn, :index)) %>">
+          <a href="/blog">Blog</a>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="show-for-collapsed">
+              Pages <span class="caret"></span>
+            </span>
+
+            <span class="show-for-uncollapsed">
+              <span class="more-menu-item glyphicon glyphicon-option-horizontal"></span>
+            </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= page_path(@conn, :show, "about") %>">About</a></li>
+            <li><a href="<%= page_path(@conn, :show, "privary") %>">Privacy</a></li>
+            <li><a href="<%= page_path(@conn, :show, "terms") %>">Terms</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="btn-container">
+          <a class="newsletter-btn" href="/newsletter-subscribe">
+            <span>
+              Subscribe for freebies &rarr;
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

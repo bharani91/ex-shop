@@ -1,0 +1,13 @@
+@media (max-width: 1200px) {
+  .affix {
+    margin: 5em auto;
+    position: static;
+  }
+}
+
+@media (min-width: 1200px) {
+  .affix {
+    width: 263px;
+    top: 20px;
+  }
+}

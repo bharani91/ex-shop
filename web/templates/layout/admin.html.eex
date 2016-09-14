@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+
+    <title>Authentic Pixels - Free & Premium Web Resources</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/admin.css") %>">
+  </head>
+
+  <body class="admin">
+    <%= render Ap.Admin.SharedView, "header.html", conn: @conn, current_user: current_user(@conn) %>
+
+    <div class="container main-container">
+      <%= show_flash(@conn) %>
+
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+
+
+    <footer class="main-footer">
+      <div class="text-center">
+        &copy; Authentic Pixels. All Rights Reserved.
+      </div>
+    </footer>
+
+
+    <script src="<%= static_path(@conn, "/js/admin.js") %>"></script>
+
+
+  </body>
+</html>

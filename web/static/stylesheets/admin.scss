@@ -1,0 +1,29 @@
+// Config
+@import "shared/config/variables";
+@import "shared/config/mixins";
+@import "shared/config/phoenix-overrides";
+
+// Bootstrap
+@import "admin/config/bootstrap-overrides";
+@import "admin/config/bootstrap";
+
+// Shared Components
+@import "shared/page-header";
+
+// Components
+@import "admin/components/header";
+@import "admin/components/footer";
+@import "admin/components/layout";
+@import "admin/components/forms";
+
+// Pages
+@import "admin/pages/products";
+
+.fr-element.fr-view {
+  .froala-read-more-break  {
+    height: 2px;
+    background: black;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

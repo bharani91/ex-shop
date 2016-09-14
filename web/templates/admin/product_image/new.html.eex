@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h2>Product Images</h2>
+</div>
+
+<section class="product-images-new">
+
+</section>
+<div class="row">
+  <div class="col-md-8">
+    <%= if @product.product_images != [] do %>
+      <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "arrows": true, "respondTo": "window"}'>
+        <%= for image <- @product.product_images do %>
+          <div class="item">
+            <img src="<%= image.url %>" alt="" class="img-responsive img-thumbnail" />
+
+            <br>
+
+            <%= link "Delete", to: admin_product_image_path(@conn, :delete, @product, image), method: :delete, class: "btn btn-danger", data: [confirm: "Are you sure?"] %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+    <div class="jumbotron text-center">
+      <p class="lead text-muted">
+        No photos uploaded yet.
+      </p>
+    </div>
+    <% end %>
+  </div><!-- col md 8 -->
+
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>
+          Add another image
+        </strong>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for @changeset, admin_product_image_path(@conn, :create, @product), [multipart: true, method: :post], fn f -> %>
+          <%= if @changeset.action do %>
+            <div class="alert alert-danger">
+              <p>Oops, something went wrong! Please check the errors below.</p>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= label f, :file, class: "control-label" %>
+            <%= file_input f, :file, required: true, accept: "image/*" %>
+            <%= error_tag f, :file %>
+          </div>
+
+          <div class="form-group">
+            <%= submit "Submit", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div><!-- panel -->
+  </div>
+</div>

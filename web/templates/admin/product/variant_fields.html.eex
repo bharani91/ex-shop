@@ -1,0 +1,33 @@
+<%= inputs_for @f, :variants, fn variant -> %>
+<div class="variant-form-item">
+  <div class="form-group">
+    <%= label variant, :title, class: "control-label" %>
+    <%= text_input variant, :title, class: "form-control" %>
+    <%= error_tag variant, :title %>
+  </div>
+  <div class="form-group">
+    <%= label variant, :purchase_url, class: "control-label" %>
+    <%= text_input variant, :purchase_url, class: "form-control" %>
+    <%= error_tag variant, :purchase_url %>
+  </div>
+  <div class="form-group">
+    <%= label variant, :price, class: "control-label" %>
+    <%= number_input variant, :price, class: "form-control" %>
+    <%= error_tag variant, :price %>
+  </div>
+
+  <div class="form-group">
+    <%= label variant, :description, class: "control-label" %>
+    <%= textarea variant, :description, class: "form-control" %>
+    <%= error_tag variant, :description %>
+  </div>
+
+  <%= if variant.model.id do %>
+    <div class="form-group">
+      <%= checkbox variant, :delete %>
+      <%= label variant, :delete, "Delete?" %>
+    </div>
+  <% end %>
+</div>
+
+<% end %>

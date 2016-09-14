@@ -1,0 +1,25 @@
+.support-message {
+  .form-group {
+    input {
+      max-width: 550px;
+    }
+
+    textarea {
+      min-height: 250px;
+      max-width: 750px;
+    }
+  }
+
+  .sidebar {
+    .social-widget {
+      margin-top: 1em;
+      .widget-content {
+        a {
+          font-size: 1.3em;
+          display: inline-block;
+          margin: 0.5em auto;
+        }
+      }
+    }
+  }
+}

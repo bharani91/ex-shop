@@ -1,0 +1,28 @@
+<p>
+  Hello,
+</p>
+
+<p>Thank you for contacting Authentic Pixels. We strive to answer all e-mail support requests within 24 to 48 hours. Weekends and Holidays may require additional time to respond.</p>
+
+<hr />
+
+<h3 style="color: #999999"><%= @subject %></h3>
+
+<p style="color: #999999">
+  <%= @message %>
+</p>
+
+<hr />
+
+
+<p>
+  We'll be in touch soon.
+</p>
+
+<br><br>
+
+<p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px; Margin-bottom: 35px;">
+  Thanks, <br>
+  Bharani <br>
+  Founder, Authentic Pixels <br>
+</p>

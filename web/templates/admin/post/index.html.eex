@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h2>Listing posts</h2>
+</div>
+
+<%= render "list.html", posts: @posts, conn: @conn %>
+
+<%= if @kerosene.total_pages > 1 do %>
+  <%= paginate @conn, @kerosene %>
+<% end %>
+
+<%= link "Add a new blog post", to: admin_post_path(@conn, :new), class: "btn btn-primary btn-lg" %>

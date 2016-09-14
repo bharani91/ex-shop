@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h2>Edit '<%= @product.title %>'</h2>
+</div>
+
+<%= render "form.html", changeset: @changeset, action: admin_product_path(@conn, :update, @product), categories: @categories %>

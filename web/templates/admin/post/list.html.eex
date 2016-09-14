@@ -1,0 +1,55 @@
+<%= if @posts == [] do %>
+<div class="jumbotron text-center">
+  <p class="text-muted lead">
+    No posts yet.
+  </p>
+</div>
+<% else %>
+<div class="table-responsive">
+  <table class="table table-bordered products-table">
+    <thead>
+      <tr>
+        <th width="40%">Title</th>
+        <th width="30%">Published?</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for post <- @posts do %>
+      <tr>
+        <td>
+          <h3>
+            <%= post.title %> <br>
+            <small>
+              <%= post.slug %>
+            </small>
+          </h3>
+        </td>
+
+        <td>
+          <%= if post.published do %>
+            <p>
+              <span class="label label-success">YES</span>
+            </p>
+
+            <p class="text-muted">
+              <strong>Published on:</strong>
+              <time><%= post.published_at |> readable_datetime %></time>
+            </p>
+
+          <% else %>
+            <span class="label label-default">NO</span>
+          <% end %>
+        </td>
+
+        <td class="text-left">
+          <%= link "Show", to: admin_post_path(@conn, :show, post), class: "btn btn-default btn-sm" %>
+          <%= link "Edit", to: admin_post_path(@conn, :edit, post), class: "btn btn-primary btn-sm" %>
+          <%= link "Delete", to: admin_post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-sm" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>

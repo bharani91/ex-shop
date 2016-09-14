@@ -1,0 +1,92 @@
+<section class="product-show">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h2 class="product-title">
+          <%= @product.title %>
+        </h2>
+      </div><!-- product header -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-9">
+
+      <div class="product-images">
+        <%= if @product.product_images != [] do %>
+          <div class="browser">
+            <div class="browser-header">
+              <span class="button"></span>
+              <span class="button"></span>
+              <span class="button"></span>
+            </div>
+
+            <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "arrows": true, "respondTo": "window", "adaptiveHeight": true}'>
+              <%= for image <- @product.product_images do %>
+                <div class="item">
+                  <img src="<%= image.url %>" alt="" class="img-responsive" />
+                </div>
+              <% end %>
+            </div>
+
+          </div><!-- browser -->
+
+        <% end %>
+      </div><!-- product images -->
+
+
+      <div class="product-content">
+        <%= raw @product.content %>
+      </div><!-- product-content -->
+
+
+      <div class="product-categories-list">
+        <h5 class="text-muted">
+          Categorized under:
+          <%= for cat <- @product.product_categories do %>
+            <%= link cat.title, to: product_category_path(@conn, :show, cat.slug) %>
+          <% end %>
+        </h5>
+      </div>
+
+    </div><!-- col md 9 -->
+
+    <div class="col-lg-3 product-sidebar">
+      <div class="widget widget-secondary" data-sticky>
+        <div class="widget-content">
+          <%= link "View Demo", to: product_preview_path(@conn, :show, @product.slug), class: "btn btn-default demo-btn btn-block btn-lg", target: "_blank" %>
+
+
+          <table class="table variant-chooser js-variant-chooser">
+            <%= for {variant, id} <- Enum.with_index @product.variants do %>
+            <%= if id == 0 do %>
+            <tr data-price="<%= readable_price([variant]) %>" data-purchase-url="<%= variant.purchase_url %>" class="active">
+            <% else  %>
+            <tr data-price="<%= readable_price([variant]) %>" data-purchase-url="<%= variant.purchase_url %>">
+            <% end %>
+              <td width="50px" class="variant-price">
+                $<%= variant.price %>
+              </td>
+
+              <td class="variant-content">
+                <h5><%= variant.title %></h5>
+                <small>
+                  <%= variant.description %>
+                </small>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+
+          <a href="<%= default_purchase_url(@product.variants) %>" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">
+            Buy Now <span><%= readable_price(@product.variants) %></span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>

@@ -1,0 +1,22 @@
+.post-show  {
+  .post-author-bio {
+    padding-top: 3em;
+    border-top: 1px solid darken($light, 6.25%);
+
+    .social-links {
+      font-size: 1.3em;
+      margin-top: 1em;
+      .social-link {
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+
+  @media(min-width: $screen-sm-max) {
+    .post-container {
+      padding-right: 2em;
+    }
+  }
+}

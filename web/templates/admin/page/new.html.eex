@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h2>Add a new page</h2>
+</div>
+
+<%= render "form.html", changeset: @changeset, action: admin_page_path(@conn, :create) %>

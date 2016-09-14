@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h2>
+    Add a new post category
+  </h2>
+</div>
+
+
+<%= render "form.html", changeset: @changeset, action: admin_post_category_path(@conn, :create) %>

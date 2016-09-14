@@ -1,0 +1,53 @@
+<section class="post-show">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="post-container">
+
+        <div class="post-item">
+          <div class="post-meta">
+            <time>
+              <%= readable_datetime(@post.published_at) %>
+            </time>
+          </div>
+
+          <h2 class="post-title">
+            <%= @post.title %>
+          </h2>
+
+          <%= if @post.featured_image do %>
+          <div class="post-featured-image">
+            <img src="<%= @post.featured_image %>" alt="<%= @post.title %>" class="img-responsive img-thumbnail" />
+          </div>
+          <% end %>
+
+          <div class="post-content">
+            <%= raw @post.content %>
+          </div>
+        </div>
+
+        <div class="post-author-bio">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Published by <%= @admin.name %></h4>
+              <%= raw @admin.bio %>
+
+              <div class="social-links">
+                <%= if @admin.github_url do %>
+                  <a class="social-link" href="<%= @admin.github_url %>" target="_blank">Github</a>
+                <% end %>
+
+                <%= if @admin.twitter_url do %>
+                  <a class="social-link" href="<%= @admin.twitter_url %>" target="_blank">Twitter</a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- main-content -->
+
+    <div class="col-md-3">
+      <%= render Ap.SharedView, "blog_sidebar.html", conn: @conn %>
+    </div>
+  </div>
+</section>

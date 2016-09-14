@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h2>Listing products</h2>
+</div>
+
+<%= render "list.html", conn: @conn, products: @products %>
+
+<%= if @kerosene.total_pages > 1 do %>
+  <%= paginate @conn, @kerosene %>
+<% end %>
+
+<%= link "Add a new product", to: admin_product_path(@conn, :new), class: "btn btn-primary btn-lg" %>

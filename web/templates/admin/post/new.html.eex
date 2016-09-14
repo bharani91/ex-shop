@@ -1,0 +1,7 @@
+<div class="page-header">
+  <h2>
+    Add a new post
+  </h2>
+</div>
+
+<%= render "form.html", changeset: @changeset, action: admin_post_path(@conn, :create), featured_image: nil, categories: @categories %>

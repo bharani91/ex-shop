@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h2>Edit '<%= @category.title %>'</h2>
+</div>
+
+<%= render "form.html", changeset: @changeset, action: admin_post_category_path(@conn, :update, @category) %>

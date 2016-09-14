@@ -1,0 +1,114 @@
+<nav class="navbar navbar-inverse main-header">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admin-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link "Authentic Pixels", to: admin_dashboard_path(@conn, :index), class: "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="admin-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Products
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <%= link "List Products", to: admin_product_path(@conn, :index) %>
+            </li>
+
+            <li>
+              <%= link "Add a new product", to: admin_product_path(@conn, :new) %>
+            </li>
+
+            <li role="separator" class="divider"></li>
+
+            <li>
+              <%= link "List Product Categories", to: admin_product_category_path(@conn, :index) %>
+            </li>
+
+            <li>
+              <%= link "Add a new product category", to: admin_product_category_path(@conn, :new) %>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Blog
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <%= link "All Posts", to: admin_post_path(@conn, :index) %>
+            </li>
+
+            <li>
+              <%= link "Drafts", to: admin_post_path(@conn, :drafts) %>
+            </li>
+
+            <li>
+              <%= link "Published Posts", to: admin_post_path(@conn, :published) %>
+            </li>
+
+            <li>
+              <%= link "Add a new post", to: admin_post_path(@conn, :new) %>
+            </li>
+
+            <li role="separator" class="divider"></li>
+
+            <li>
+              <%= link "List Post Categories", to: admin_post_category_path(@conn, :index) %>
+            </li>
+
+            <li>
+              <%= link "Add a new post category", to: admin_post_category_path(@conn, :new) %>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link "Support Messages", to: admin_support_message_path(@conn, :index) %>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Static Pages
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <%= link "List Pages", to: admin_page_path(@conn, :index) %>
+            </li>
+            <li>
+              <%= link "Add a new page", to: admin_page_path(@conn, :new) %>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link "Edit Profile", to: admin_user_path(@conn, :edit, @current_user) %>
+        </li>
+        <li class="navbar-form">
+          <%= link "Sign out", to: session_path(@conn, :delete, @current_user), method: :delete, class: "btn btn-link" %>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

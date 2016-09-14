@@ -1,0 +1,127 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            Post Content
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :title, class: "control-label" %>
+            <%= text_input f, :title, class: "form-control", data: [sluggify: "#post-slug-input"] %>
+            <%= error_tag f, :title %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :content, class: "control-label" %>
+            <%= textarea f, :content, class: "form-control", id: "editor" %>
+            <%= error_tag f, :content %>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-body bg-warning">
+          <%= checkbox f, :published %>
+          <%= label f, :published, "Publish?", class: "control-label" %>
+
+          <%= error_tag f, :published %>
+        </div>
+      </div>
+
+    </div><!-- col-md-8 -->
+
+    <div class="col-md-4">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            Categories
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :post_categories, "Add Categories", class: "control-label" %>
+            <%= multiple_select f, :post_categories, @categories, class: "form-control", selected: Enum.map(@changeset.data.post_categories, &(&1.id))%>
+            <%= error_tag f, :post_categories %>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            SEO Settings
+          </strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+            <%= label f, :slug, class: "control-label" %>
+            <%= text_input f, :slug, class: "form-control js-slug-field", id: "post-slug-input" %>
+            <%= error_tag f, :slug %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :page_title, class: "control-label" %>
+            <%= text_input f, :page_title, class: "form-control" %>
+            <%= error_tag f, :page_title %>
+          </div>
+
+          <div class="form-group">
+            <%= label f, :meta_description, class: "control-label" %>
+            <%= textarea f, :meta_description, class: "form-control" %>
+            <%= error_tag f, :meta_description %>
+          </div>
+        </div>
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            Featured Image
+          </strong>
+        </div>
+
+        <div class="panel-body">
+
+          <%= if @featured_image do %>
+            <div class="featured-image">
+              <img src="<%= @featured_image %>" class="img-responsive img-thumbnail" />
+            </div>
+          <% end %>
+
+          <hr>
+
+          <div class="form-group">
+            <%= hidden_input f, :featured_image %>
+
+            <%= if @featured_image do %>
+              <%= label f, :image, "Replace featured image" %>
+            <% end %>
+            <%= file_input f, :image, accepts: "image/*" %>
+            <%= error_tag f, :image %>
+          </div>
+        </div>
+      </div><!-- panel -->
+
+    </div><!-- col-md-3 -->
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= submit "Submit", class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+
+<% end %>

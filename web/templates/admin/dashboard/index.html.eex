@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2>Dashboard</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h4>Recent Products</h4>
+    <br>
+    <%= render Ap.Admin.ProductView, "list.html", conn: @conn, products: @products %>
+    <br>
+
+    <%= link "View all products", to: admin_product_path(@conn, :index), class: "btn btn-default" %>
+  </div>
+</div><!-- row -->
+
+<hr>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h4>Recent Posts</h4>
+    <br>
+    <%= render Ap.Admin.PostView, "list.html", conn: @conn, posts: @posts %>
+    <br>
+
+    <%= link "View all posts", to: admin_post_path(@conn, :index), class: "btn btn-default" %>
+  </div>
+</div><!-- row -->

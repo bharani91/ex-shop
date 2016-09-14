@@ -1,0 +1,41 @@
+<section class="posts-list">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="post-container">
+
+        <%= for post <- @posts do %>
+          <div class="post-item">
+            <div class="post-meta">
+              <time>
+                <%= readable_datetime(post.published_at) %>
+              </time>
+            </div>
+            <h2 class="post-title">
+              <%= link post.title, to: post_path(@conn, :show, post.slug) %>
+            </h2>
+
+            <%= if post.featured_image do %>
+            <div class="post-featured-image">
+              <img src="<%= post.featured_image %>" alt="<%= post.title %>" class="img-responsive img-thumbnail" />
+            </div>
+            <% end %>
+
+            <div class="post-content">
+              <%= raw truncate_post(post) %>
+            </div>
+
+            <p class="read-more-link">
+              <%= link to: post_path(@conn, :show, post.slug) do %>
+                Continue Reading
+              <% end %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div><!-- main-content -->
+
+    <div class="col-md-3">
+      <%= render Ap.SharedView, "blog_sidebar.html", conn: @conn %>
+    </div>
+  </div>
+</section>

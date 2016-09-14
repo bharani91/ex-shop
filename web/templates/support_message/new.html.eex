@@ -1,0 +1,41 @@
+<section class="support-message">
+  <div class="page-header">
+    <h2>
+      We'd love to hear from you!
+    </h2>
+
+    <p>
+      Please send your comments & suggestions using this contact form.
+      <br>
+      Alternatively, you can also send me an email at <a href="mailto:bharani@authenticpixels.com">bharani@authenticpixels.com</a>.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <%= render "form.html", changeset: @changeset, action: support_message_path(@conn, :create) %>
+    </div>
+
+    <div class="col-md-3 sidebar">
+      <div class="widget widget-secondary social-widget">
+        <div class="widget-header">
+          <h3>Elsewhere</h3>
+        </div>
+
+        <div class="widget-content">
+          <p class="text-muted">
+            For a faster response, feel free to send us a message on Facebook/Twitter.
+          </p>
+          <a href="https://twitter.com/authenticPx">
+            Follow us on Twitter
+          </a>
+
+          <a href="https://facebook.com/AuthenticPixels">
+            Like us on Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

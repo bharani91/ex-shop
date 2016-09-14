@@ -1,0 +1,11 @@
+.coming-soon-box {
+  text-align: center;
+  min-height: 60vh;
+  padding: 3em 0;
+  color: $gray-light;
+
+  .main-icon {
+    font-size: 8em;
+    color: darken($gray-lighter, 10%);
+  }
+}

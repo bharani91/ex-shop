@@ -1,0 +1,88 @@
+.footer-subscribe-widget {
+  background: $white;
+  border: 2px solid $dark;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 3em;
+
+  .widget-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .widget-header {
+    h3 {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      font-size: 1.5em;
+    }
+
+    p {
+      font-family: $font-family-serif;
+      font-style: italic;
+      color: $gray-light;
+      font-size: 1.2em;
+      margin: 0.5em auto;
+    }
+  }
+
+  .widget-content {
+    margin: 2em auto;
+
+    .main-image {
+      width: auto;
+      margin-bottom: 2em;
+      border-bottom: 1px solid darken($gray-lighter, 6.25%);
+      padding: 0 2em;
+    }
+
+    @media(max-width: $screen-xs-min) {
+      .input-group {
+        display: block;
+        overflow: hidden;
+
+        .text-input {
+          display: block;
+          width: 100%;
+          float: left;
+        }
+
+        .input-group-btn {
+          display: block;
+          width: 100%;
+          float: left;
+          text-align: left;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .text-input {
+      border: 2px solid $dark;
+      height: 55px;
+
+      &:focus {
+        box-shadow: none;
+        background: $light;
+      }
+    }
+
+    .btn {
+      height: 55px;
+      padding-left: 36px;
+      padding-right: 36px;
+      @media(max-width: $screen-sm-min) {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+
+
+    .subscribe-meta {
+      margin-top: 1em;
+      color: lighten($gray-light, 15%);
+    }
+  }
+}

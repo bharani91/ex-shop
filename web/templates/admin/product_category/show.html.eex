@@ -1,0 +1,27 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h2>
+        <%= @category.title %> <br>
+        <small>
+          <%= @category.slug %>
+        </small>
+      </h2>
+    </div><!-- page-heading -->
+
+
+    <h4>Posts in this category</h4>
+    <%= render Ap.Admin.ProductView, "list.html", conn: @conn, products: @category.products %>
+
+
+  </div>
+
+</div>
+
+<hr>
+
+<%= link "Edit", to: admin_product_category_path(@conn, :edit, @category), class: "btn btn-default" %>
+
+<%= link "Delete", to: admin_product_category_path(@conn, :delete, @category), class: "btn btn-danger", data: [confirm: "Are you sure?"], method: :delete %>

@@ -1,0 +1,77 @@
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="page-header">
+      <h2>
+        <%= @post.title %> <br>
+        <small>
+          <%= @post.slug %>
+        </small>
+      </h2>
+    </div><!-- page-heading -->
+
+
+    <div class="content">
+      <%= raw @post.content %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="list-group">
+      <div class="list-group-item list-group-heading">
+        <strong>Categorized under</strong>
+      </div>
+      <%= for category <- @post.post_categories do %>
+        <%= link category.title, to: admin_post_category_path(@conn, :show, category), class: "list-group-item" %>
+      <% end %>
+    </div>
+
+    <%= if @post.featured_image do %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>Featured image</strong>
+        </div>
+
+        <div class="panel-body">
+          <div class="featured-image">
+            <img src="<%= @post.featured_image %>" alt="img-responsive img-thumbnail" />
+          </div>
+        </div>
+      </div><!-- panel -->
+    <% end %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>SEO Settings</strong>
+      </div>
+
+      <div class="panel-body">
+        <h5>
+          Page Title
+        </h5>
+
+        <p>
+          <%= @post.page_title %>
+        </p>
+
+        <hr>
+
+        <h5>
+          Meta Description
+        </h5>
+
+        <p>
+          <%= @post.meta_description %>
+        </p>
+
+      </div>
+    </div><!-- panel -->
+
+  </div>
+</div>
+
+
+  <%= link "Edit", to: admin_post_path(@conn, :edit, @post), class: "btn btn-default" %>
+
+  <%= link "Delete", to: admin_post_path(@conn, :delete, @post), class: "btn btn-danger", data: [confirm: "Are you sure?"], method: :delete %>

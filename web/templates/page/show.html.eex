@@ -1,0 +1,23 @@
+<section class="page-show">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="post-container">
+
+        <div class="post-item">
+          <h2 class="post-title">
+            <%= @page.title %>
+          </h2>
+
+          <div class="post-content">
+            <%= raw @page.content %>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- main-content -->
+
+    <div class="col-md-3">
+      <%= render Ap.SharedView, "blog_sidebar.html", conn: @conn %>
+    </div>
+  </div>
+</section>

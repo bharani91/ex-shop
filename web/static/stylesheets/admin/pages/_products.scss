@@ -1,0 +1,33 @@
+.products-table {
+  tbody {
+    tr {
+      td {
+
+        h3 {
+          margin: 0;
+          font-size: 1.2em;
+        }
+
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.variant-form-item {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  .slick-slider {
+    .slick-prev:before, .slick-next:before {
+      color: black;
+    }
+
+    .slick-slide {
+      padding-right: 10px;
+    }
+  }
+}
