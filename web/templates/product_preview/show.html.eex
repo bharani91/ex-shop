@@ -1,5 +1,5 @@
 <header id="header">
-  <a class="back" href="/">
+  <a class="back" href="<%= product_path(@conn, :show, @product.slug) %>">
     &larr;
   </a>
   <p class="title">

@@ -24,7 +24,7 @@
             <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "arrows": true, "respondTo": "window", "adaptiveHeight": true}'>
               <%= for image <- @product.product_images do %>
                 <div class="item">
-                  <img src="<%= image.url %>" alt="" class="img-responsive" />
+                  <img src="<%= image.secure_url %>" alt="" class="img-responsive" />
                 </div>
               <% end %>
             </div>
@@ -54,8 +54,9 @@
     <div class="col-lg-3 product-sidebar">
       <div class="widget widget-secondary" data-sticky>
         <div class="widget-content">
-          <%= link "View Demo", to: product_preview_path(@conn, :show, @product.slug), class: "btn btn-default demo-btn btn-block btn-lg", target: "_blank" %>
-
+          <%= link to: product_preview_path(@conn, :show, @product.slug), class: "btn btn-default demo-btn btn-block btn-lg", target: "_blank" do %>
+            Live Preview <span class="glyphicon glyphicon-chevron-right"></span>
+          <% end %>
 
           <table class="table variant-chooser js-variant-chooser">
             <%= for {variant, id} <- Enum.with_index @product.variants do %>

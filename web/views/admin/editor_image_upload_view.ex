@@ -1,7 +1,7 @@
 defmodule Ap.Admin.EditorImageUploadView do
   use Ap.Web, :view
 
-  def render("upload.json", %{ image: %{ "url" => url } }) do
+  def render("upload.json", %{ image: %{ "secure_url" => url } }) do
     %{
       "link": url
     }

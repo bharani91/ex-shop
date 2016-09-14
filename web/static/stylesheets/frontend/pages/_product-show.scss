@@ -38,6 +38,15 @@
     }
   }
 
+  .demo-btn  {
+    span {
+      font-size: 10px;
+      color: $gray-dark;
+      position: relative;
+      top: -1px;
+    }
+  }
+
   .variant-chooser {
     padding: 0;
     line-height: 1;

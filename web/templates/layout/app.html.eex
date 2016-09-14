@@ -15,6 +15,9 @@
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/images/favicon.png" sizes="16x16" type="image/png">
+
+    <script src="<%= static_path(@conn, "/js/frontend.js") %>"></script>
+
   </head>
 
   <body>
@@ -32,6 +35,5 @@
 
     <%= render Ap.SharedView, "footer.html", conn: @conn %>
 
-    <script src="<%= static_path(@conn, "/js/frontend.js") %>"></script>
   </body>
 </html>
