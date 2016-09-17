@@ -8,6 +8,7 @@
     <%= render_existing(@view_module, "meta." <> @view_template, assigns) || render(Ap.LayoutView, "meta.html", assigns) %>
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/frontend.css") %>">
+
     <link rel="dns-prefetch" href="//res.cloudinary.com">
 
     <%= render Ap.LayoutView, "common_social_meta.html" %>
@@ -16,7 +17,7 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/images/favicon.png" sizes="16x16" type="image/png">
 
-    <script src="<%= static_path(@conn, "/js/frontend.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/frontend.js") %>" async></script>
 
     <meta name="msvalidate.01" content="3F3F0DA3D9FF8AE3DA64D767717C782B" />
 
