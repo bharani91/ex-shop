@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="/css/frontend.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h3>
+            Page not found.
+          </h3>
+          <p>
+            Sorry, the page you were looking for could not be found.
+            Click here to go back to the <a href="/">home page</a> or visit the <a href="/contact/new">contact page</a> to drop us a line.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

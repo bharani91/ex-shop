@@ -25,6 +25,12 @@ config :logger, :console,
 
 config :slugger, separator_char: ?-
 
+config :plain_sitemap, generator: Ap.Sitemap
+
+config :quantum, cron: [
+  "@daily": {Ap.Tasks.RefreshSitemap, :perform}
+]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
