@@ -58,7 +58,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="<%= page_path(@conn, :show, "about") %>">About</a></li>
-            <li><a href="<%= page_path(@conn, :show, "privary") %>">Privacy</a></li>
+            <li><a href="<%= page_path(@conn, :show, "privacy") %>">Privacy</a></li>
             <li><a href="<%= page_path(@conn, :show, "terms") %>">Terms</a></li>
           </ul>
         </li>
