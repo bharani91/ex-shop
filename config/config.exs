@@ -28,7 +28,11 @@ config :slugger, separator_char: ?-
 config :plain_sitemap, generator: Ap.Sitemap
 
 config :quantum, cron: [
-  "@daily": {Ap.Tasks.RefreshSitemap, :perform}
+  sitemap: [
+    schedule: "@daily",
+    task: "Ap.Tasks.RefreshSitemap.perform",
+    args: []
+  ]
 ]
 
 # Import environment specific config. This must remain at the bottom
