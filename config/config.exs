@@ -25,7 +25,9 @@ config :logger, :console,
 
 config :slugger, separator_char: ?-
 
-config :plain_sitemap, generator: Ap.Sitemap
+config :plain_sitemap,
+  generator: Ap.Sitemap,
+  output_dir: System.get_env("STORAGE_DIR") || "/priv/static"
 
 config :quantum, cron: [
   sitemap: [
