@@ -5,6 +5,10 @@
 
   a {
     position: relative;
+    display: inline-block;
+    height: 55px;
+    width: 185px;
+
     #logo {
       text-indent: -9999px;
       background: url("../assets/images/logo2.svg") left top no-repeat;
@@ -20,7 +24,7 @@
       color: #fff;
       text-indent: 0;
       position: absolute;
-      top: 100%;
+      top: 40%;
       left: -5%;
       width: 110%;
       font-size: 12px;
