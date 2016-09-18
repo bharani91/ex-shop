@@ -20,7 +20,14 @@ import Turbolinks from "turbolinks";
 Turbolinks.start()
 
 $(function() {
-  $(document).on("turbolinks:load", function() {
+  $(document).on("turbolinks:load", function(event) {
+
+    if(typeof ga === "functions") {
+      ga("set", "location", event.data.url)
+      ga("send", "pageview")
+    }
+
+
     $("[data-slick]").slick();
 
     $("[data-sticky]").each(function() {
