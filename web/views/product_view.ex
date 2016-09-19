@@ -47,9 +47,6 @@ defmodule Ap.ProductView do
     <meta name="twitter:description" content="<%= product.meta_description || product.extract %>">
     <meta name="twitter:image" content="<%= featured_image_url(product.product_images) %>">
 
-    <meta itemprop="name" content="<%= product.page_title %> - Authentic Pixels">
-    <meta itemprop="description" content="<%= product.meta_description || product.extract %>">
-    <meta itemprop="image" content="<%= featured_image_url(product.product_images) %>">
     }
   end
 end

@@ -32,11 +32,6 @@ defmodule Ap.LayoutView do
     <meta name="twitter:title" content="Free & Premium Web Resources by Authentic Pixels">
     <meta name="twitter:description" content="We deliver free Bootstrap themes & templates, UI kits, mockups, landing pages & other web/design resources.">
     <meta name="twitter:image" content="https://www.authenticpixels.com/images/authentic-pixels-facebook.png">
-
-
-    <meta itemprop="name" content="Free & Premium Web Resources by Authentic Pixels">
-    <meta itemprop="description" content="We deliver free Bootstrap themes & templates, UI kits, mockups, landing pages & other web/design resources.">
-    <meta itemprop="image" content="https://www.authenticpixels.com/images/authentic-pixels-facebook.png">
     }
   end
 

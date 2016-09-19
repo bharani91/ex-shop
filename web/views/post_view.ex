@@ -36,9 +36,6 @@ defmodule Ap.PostView do
     <meta name="twitter:description" content="<%= post.meta_description %>">
     <meta name="twitter:image" content="<%= post.featured_image %>">
 
-    <meta itemprop="name" content="<%= post.page_title %> - Authentic Pixels">
-    <meta itemprop="description" content="<%= post.meta_description %>">
-    <meta itemprop="image" content="<%= post.featured_image %>">
     }
   end
 end
