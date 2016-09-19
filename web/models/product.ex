@@ -31,7 +31,9 @@ defmodule Ap.Product do
   end
 
   def only_featured do
-    from p in __MODULE__, where: p.featured == true
+    from p in __MODULE__,
+      where: p.featured == true,
+      order_by: [desc: p.inserted_at]
   end
 
   @doc """
