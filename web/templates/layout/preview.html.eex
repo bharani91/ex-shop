@@ -64,6 +64,11 @@
       top: -2px;
       left: 10px;
     }
+
+    #wrapper {
+      height: 500px;
+      height: calc(100vh - 50px);
+    }
     </style>
 
   </head>
