@@ -6,11 +6,17 @@ defmodule Ap.Tasks.RefreshSitemap do
   @host "https://www.authenticpixels.com"
   @default_output_dir "priv/static"
   @output_file_name "sitemap.xml"
-  @sitemap_public_path "/uploads/sitemap.xml"
+  @sitemap_public_path "/media/sitemap.xml"
 
   def generate do
+    storage_dir = System.get_env("STORAGE_DIR")
+
+    if storage_dir == nil do
+      storage_dir = @default_output_dir
+    end
+
     path =
-      System.get_env("STORAGE_DIR")
+      storage_dir
       |> Path.join(@output_file_name)
 
     {:ok, file} = File.open path, [:utf8, :write]
