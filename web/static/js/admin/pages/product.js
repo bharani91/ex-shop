@@ -13,6 +13,12 @@ $(function() {
     $(this).data("touched", "true")
   })
 
+  // Don't sluggify on edit pages.
+  // It is creating 404s
+  if( $.trim($(".js-slug-field").val()).length ) {
+    $(".js-slug-field").data("touched", "true")
+  }
+
 
   var $variantContainer = $("#variants-form-list");
   var $addVariantBtn = $("#add-variant-btn");

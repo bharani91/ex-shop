@@ -8,7 +8,7 @@ defmodule Ap.ProductController do
   def index(conn, params) do
     products =
       Repo.all(Product)
-      |> Repo.preload(:product_images)
+      |> Repo.preload([product_images: ProductImage.default_order])
 
     render(conn, "index.html", products: products)
   end
