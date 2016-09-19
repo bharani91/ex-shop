@@ -21,10 +21,8 @@ Turbolinks.start()
 
 $(function() {
   $(document).on("turbolinks:load", function(event) {
-
     if(typeof ga === "function") {
-      ga("set", "location", event.data.url)
-      ga("send", "pageview")
+      ga("send", "pageview", window.location.pathname)
     }
 
 
