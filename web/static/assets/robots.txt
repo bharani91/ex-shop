@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow: /
 
-Sitemap: https://www.authenticpixels.com/sitemap.xml.gz
+Sitemap: https://www.authenticpixels.com/uploads/sitemap.xml
