@@ -25,14 +25,10 @@ config :logger, :console,
 
 config :slugger, separator_char: ?-
 
-config :plain_sitemap,
-  generator: Ap.Sitemap,
-  output_dir: System.get_env("STORAGE_DIR") || "/priv/static"
-
 config :quantum, cron: [
   sitemap: [
     schedule: "@daily",
-    task: "Ap.Tasks.RefreshSitemap.perform",
+    task: "Ap.Tasks.RefreshSitemap.generate",
     args: []
   ]
 ]
