@@ -10,9 +10,9 @@
             </time>
           </div>
 
-          <h2 class="post-title">
+          <h1 class="post-title">
             <%= @post.title %>
-          </h2>
+          </h1>
 
           <%= if @post.featured_image do %>
           <div class="post-featured-image">

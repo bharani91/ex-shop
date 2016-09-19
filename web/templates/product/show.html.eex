@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="page-header">
-        <h2 class="product-title">
+        <h1 class="product-title">
           <%= @product.title %>
-        </h2>
+        </h1>
       </div><!-- product header -->
     </div>
   </div>
