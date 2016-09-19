@@ -9,7 +9,7 @@ defmodule Ap.Endpoint do
     at: "/", from: :ap, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
-  plug Plug.Static, at: "/uploads", from: "/media"
+  plug Plug.Static, at: "/media", from: "/app/storage"
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
