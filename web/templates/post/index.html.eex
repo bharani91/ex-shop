@@ -16,7 +16,9 @@
 
             <%= if post.featured_image do %>
             <div class="post-featured-image">
-              <img src="<%= post.featured_image %>" alt="<%= post.title %>" class="img-responsive img-thumbnail" />
+              <a class="img-link" href="<%= post_path(@conn, :show, post.slug) %>">
+                <img src="<%= post.featured_image %>" alt="<%= post.title %>" class="img-responsive img-thumbnail" />
+              </a>
             </div>
             <% end %>
 
