@@ -31,7 +31,7 @@
       opacity: 0;
       padding: 0 5px;
       transform: translateY(10px);
-      transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+      transition: 0.2s opacity 0.3s ease-in, 0.2s transform 0.3s ease-in;
       font-weight: 500;
     }
 
@@ -46,13 +46,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-    }
-
-
-    &:active {
-      #logo {
-        transform: translateY(2px);
       }
     }
   }
