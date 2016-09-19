@@ -16,6 +16,16 @@
     }
   }
 
+  .product-content {
+    margin: 2em 0;
+    img {
+      padding: 5px;
+      border: 1px solid darken($gray-lighter, 6.25%);
+      display: inline-block;
+      margin: 1em auto;
+    }
+  }
+
   .product-images {
     .browser {
       margin-bottom: 3em;
