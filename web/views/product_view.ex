@@ -32,7 +32,7 @@ defmodule Ap.ProductView do
 
     ~E{
     <title><%= product.page_title %> - Authentic Pixels</title>
-    <meta type="description" content="<%= product.meta_description || product.extract %>" />
+    <meta name="description" content="<%= product.meta_description || product.extract %>" />
     }
   end
 

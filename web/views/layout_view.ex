@@ -19,7 +19,7 @@ defmodule Ap.LayoutView do
   def render("meta.html", _assigns) do
     ~E{
     <title>Authentic Pixels - Free & Premium Boostrap Templates</title>
-    <meta type="description" content="We deliver free Bootstrap themes -  admin/dashboard templates, startup landing pages, UI kits, mockups, landing pages & other web/design resources." />
+    <meta name="description" content="We deliver free Bootstrap themes -  admin/dashboard templates, startup landing pages, UI kits, mockups, landing pages & other web/design resources." />
     }
   end
 

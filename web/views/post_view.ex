@@ -14,7 +14,14 @@ defmodule Ap.PostView do
     post = assigns[:post]
     ~E{
     <title><%= post.page_title %> - Authentic Pixels</title>
-    <meta type="description" content="<%= post.meta_description %>" />
+    <meta name="description" content="<%= post.meta_description %>" />
+    }
+  end
+
+  def render("meta.index.html", assigns) do
+    post = assigns[:post]
+    ~E{
+    <title>Recent Blog Posts - Authentic Pixels</title>
     }
   end
 

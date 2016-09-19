@@ -4,7 +4,7 @@ defmodule Ap.SupportMessageView do
   def render("meta.new.html", assigns) do
     ~E{
     <title>Contact Us - Authentic Pixels</title>
-    <meta type="description" content="Please send your comments & suggestions using this contact form. For a faster response, feel free to send us a message on Facebook/Twitter." />
+    <meta name="description" content="Please send your comments & suggestions using this contact form. For a faster response, feel free to send us a message on Facebook/Twitter." />
     }
   end
 end
