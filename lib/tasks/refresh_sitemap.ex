@@ -10,7 +10,7 @@ defmodule Ap.Tasks.RefreshSitemap do
 
   def generate do
     path =
-      System.get_env("STORAGE_DIR") || @default_output_dir
+      System.get_env("STORAGE_DIR")
       |> Path.join(@output_file_name)
 
     {:ok, file} = File.open path, [:utf8, :write]
