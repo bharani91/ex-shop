@@ -5,14 +5,6 @@ defmodule Ap.ProductController do
   alias Ap.Variant
   alias Ap.ProductImage
 
-  def index(conn, params) do
-    products =
-      Repo.all(Product)
-      |> Repo.preload([product_images: ProductImage.default_order])
-
-    render(conn, "index.html", products: products)
-  end
-
   def show(conn, %{"slug" => slug}) do
     product =
       Repo.get_by!(Product, slug: slug)

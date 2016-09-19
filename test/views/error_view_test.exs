@@ -5,17 +5,17 @@ defmodule Ap.ErrorViewTest do
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(Ap.ErrorView, "404.html", []) ==
+    assert render_to_string(Ap.ErrorView, "404.html", []) =~
            "Page not found"
   end
 
   test "render 500.html" do
-    assert render_to_string(Ap.ErrorView, "500.html", []) ==
-           "Internal server error"
+    assert render_to_string(Ap.ErrorView, "500.html", []) =~
+           "Internal Server Error"
   end
 
   test "render any other" do
-    assert render_to_string(Ap.ErrorView, "505.html", []) ==
-           "Internal server error"
+    assert render_to_string(Ap.ErrorView, "505.html", []) =~
+           "Internal Server Error"
   end
 end

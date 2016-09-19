@@ -9,15 +9,9 @@ defmodule Ap.Tasks.RefreshSitemap do
   @sitemap_public_path "/media/sitemap.xml"
 
   def generate do
-    storage_dir = System.get_env("STORAGE_DIR")
+    storage_dir = System.get_env("STORAGE_DIR") || @default_output_dir
 
-    if storage_dir == nil do
-      storage_dir = @default_output_dir
-    end
-
-    path =
-      storage_dir
-      |> Path.join(@output_file_name)
+    path = storage_dir |> Path.join(@output_file_name)
 
     {:ok, file} = File.open path, [:utf8, :write]
     IO.write file, render
@@ -59,57 +53,57 @@ defmodule Ap.Tasks.RefreshSitemap do
     list = [list | post_urls]
     list = [list | page_urls]
     list = [list | product_category_urls]
-    list = [list | post_category_urls]
+    [list | post_category_urls]
   end
 
   defp page_urls do
-    Page |> Repo.all |> Enum.map fn(page) ->
+    Page |> Repo.all |> Enum.map(fn(page) ->
       element(:url, %{}, [
         element(:loc, "#{@host}#{page_path(Endpoint, :show, page.slug)}"),
         element(:changefreq, "weekly"),
         element(:priority, 0.8)
       ])
-    end
+    end)
   end
 
   defp product_urls do
-    Product |> Repo.all |> Enum.map fn(product) ->
+    Product |> Repo.all |> Enum.map(fn(product) ->
       element(:url, %{}, [
         element(:loc, "#{@host}#{product_path(Endpoint, :show, product.slug)}"),
         element(:changefreq, "weekly"),
         element(:priority, 0.9)
       ])
-    end
+    end)
   end
 
   defp post_urls do
-    Post |> Repo.all |> Enum.map fn(post) ->
+    Post |> Repo.all |> Enum.map(fn(post) ->
       element(:url, %{}, [
         element(:loc, "#{@host}#{post_path(Endpoint, :show, post.slug)}"),
         element(:changefreq, "weekly"),
         element(:priority, 0.8)
       ])
-    end
+    end)
   end
 
   defp product_category_urls do
-    ProductCategory |> Repo.all |> Enum.map fn(product_category) ->
+    ProductCategory |> Repo.all |> Enum.map(fn(product_category) ->
       element(:url, %{}, [
         element(:loc, "#{@host}#{product_category_path(Endpoint, :show, product_category.slug)}"),
         element(:changefreq, "daily"),
         element(:priority, 0.8)
       ])
-    end
+    end)
   end
 
   defp post_category_urls do
-    PostCategory |> Repo.all |> Enum.map fn(post_category) ->
+    PostCategory |> Repo.all |> Enum.map(fn(post_category) ->
       element(:url, %{}, [
         element(:loc, "#{@host}#{post_category_path(Endpoint, :index, post_category.slug)}"),
         element(:changefreq, "daily"),
         element(:priority, 0.8)
       ])
-    end
+    end)
   end
 
   defp urlset_attributes do
