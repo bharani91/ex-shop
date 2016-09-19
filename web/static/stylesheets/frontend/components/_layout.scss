@@ -4,9 +4,20 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 
+  .wf-active & {
+    font-family: "Source Sans Pro";
+  }
+
   @media(max-width: $screen-sm-min) {
     line-height: 1.4;
   }
+}
+
+.main-header,
+.main-navbar,
+.main-container,
+.main-footer {
+  display: block;
 }
 
 .main-container {
