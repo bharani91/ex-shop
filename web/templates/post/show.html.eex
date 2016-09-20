@@ -25,6 +25,20 @@
           </div>
         </div>
 
+        <div class="post-sharing-buttons">
+          <h5>Share</h5>
+          <ul class="share-buttons">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.authenticpixels.com&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/Facebook.svg"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.authenticpixels.com&text=:%20http%3A%2F%2Fwww.authenticpixels.com&via=authenticPx" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/Twitter.svg"></a></li>
+            <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.authenticpixels.com" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/Google+.svg"></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.authenticpixels.com&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"><img alt="Pin it" src="/images/Pinterest.svg"></a></li>
+            <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.authenticpixels.com&title=" target="_blank" title="Add to Pocket" onclick="window.open('https://getpocket.com/save?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Add to Pocket" src="/images/Pocket.svg"></a></li>
+            <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.authenticpixels.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/images/Reddit.svg"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.authenticpixels.com&title=&summary=&source=http%3A%2F%2Fwww.authenticpixels.com" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/LinkedIn.svg"></a></li>
+            <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Fwww.authenticpixels.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/images/Email.svg"></a></li>
+          </ul>
+        </div>
+
         <div class="post-author-bio">
           <div class="row">
             <div class="col-md-12">
