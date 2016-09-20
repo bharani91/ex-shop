@@ -32,7 +32,11 @@
 
     <meta name="msvalidate.01" content="3F3F0DA3D9FF8AE3DA64D767717C782B" />
 
-    <script src="//load.sumome.com/" data-sumo-site-id="29b0361764383b9876b64fdbc2265271fe97294a1be7c60f6d9b2fc0bdc0457a" async="async"></script>
+    <script>
+    (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+      t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+    })(window, document, '_gscq','script','//widgets.getsitecontrol.com/54920/script.js');
+    </script>
 
   </head>
 
