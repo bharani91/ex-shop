@@ -1,39 +1,44 @@
 # Authentic Pixels
 
-**Digital products shop & blog created using Phoenix Framework (Elixir)**
+**Digital goods shop & blog created using Phoenix Framework (Elixir)**
+
+This is the source code for my new website - [Authentic Pixels](https://www.authenticpixels.com).
+Through Authentic Pixels, I plan to deliver high quality free & premium web resources including Bootstrap HTML templates, startup landing pages, UI kits, mockups & themes for Ghost & Wordpress.
 
 -----
 
-##### Demo: [Authentic Pixels](https://www.authenticpixels.com)
+## Demo & Screenshots
 
+**View the live website here - [Authentic Pixels](https://www.authenticpixels.com)**
+
+Here are some screenshots of the admin area.
+
+![Authentic Pixels - Product Editor](/web/static/assets/images/promo/admin-1.jpg)
+
+![Authentic Pixels - Dashboard](/web/static/assets/images/promo/admin-2.jpg)
 -----
 
-This project has been a great learning experience for me. Coming from Ruby on Rails, there are a lot of things that are done differently in Elixir/Phoenix.  Some of the things that this project helped me wrap my head around are -
+This project has been a great learning experience for me. Coming from Ruby on Rails, there are a lot of things that are done differently in Elixir/Phoenix and building this app has helped me understand the "Elixir way" of doing things.
 
-- **Nested records & associations:** Adding & deleting records dynamically was a challenging exercise. I needed to create a nested association where a *product can have many variants*. I also needed to be able to add & remove variants dynamically from using a form. Check `variant.ex`, `templates/admin/products/form.ex` and `views/admin/product_view.ex` to see how I implemented this.
+Some of the things that this project helped me wrap my head around are -
 
-- **Handling many-to-many associations and validating them:** This actually turned out to be quite tricky. I wanted *product to have many categories* and *category to have many products*. I also wanted to ensure that when I am creating a product, I have chosen a category for it. Please check `/lib/utils/many_to_many.ex` to see how I solved it. If you have a better approach, do let me know.
+1. Nested records & associations (e.g: Product has many variants)
+2. Handling many-to-many associations and validating them
+3. Uploading images
+4. Testing
+5. Switching to Webpack from Brunch
+6. Creating Sitemaps and running a cron task to regularly run the sitemap generation task
+7. Deploying (to a Digital Ocean box using Dokku)
+8. Sending HTML emails.
+9. Separating admin area from frontend using differnt layouts and scopes in `router.ex`
 
-- **Uploading images:** Since I plan to host this website on Heroku, I had to choose from S3 or Cloudinary for saving all my uploaded images (product images, blog post images etc.). I decided to go with Cloudinary because it seems like a painless way to handle uploads & image transformations. Cloudinary also provides a way to backup all you images to S3 which is quite nice. I have used an elixir package called [Cloudini](...) to uplaod my images to my Cloudinary account. Setting it up was quite trivial, you can either refer to the docs or check my `web/controllers/admin/product_image_controller.ex`.
+I will be writing about this is a lot more detail on [my blog](https://www.authenticpixels.com) soon.
 
-- **Testing:** I haven't written exhausting tests for this project yet. I only have model and controller tests. I have been tinkering with the Hound library and I plan to write some integration tests pretty soon. When I was starting out, one thing that I missed was a way to automatically run the tests when I update the relevant files (something like Guard for Ruby/Ruby on rails projects). I found a package called 'test.watch'. It works well but my only issue with it is that it runs all the tests not just the tests relevant to the file that I am currently changing. Another issue that I found is that there is no way to 'focus' on one particular test. If anyone knows how to implement this, do let me knows
 
-- **Switching to Webpack from Brunch:** Phoenix uses Brunch as the default asset bundler. I tinkered around with Brunch a little but and I think it is a pretty great tool. The only reason I switched to Webpack is that I have used it before in other projects and I can find my way around it easily.
-Replacing Brunch with Webpack was very trivial, just add webpack and friends in your `package.json` file and change `dev.exs` to this -
-```
-config :ap, Ap.Endpoint,
-  http: [port: 4000],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: [
-    node: ["node_modules/.bin/webpack", "--watch", "--colors"]
-  ]
-```
 
 -----------
 
-### Installation
+## Installation
 
 1. Clone the repository and install the dependencies
 ```
@@ -74,7 +79,7 @@ Now visit http://localhost:4000/ to see the frontend version. To access the admi
 
 ------
 
-### Running tests
+## Running tests
 
 1. Set up your test database
 ```
@@ -88,20 +93,39 @@ mix test.watch
 
 -----------
 
-### Todo
+## Todo
 
-- Create RSS feeds
-- Create sitemaps
-- Add archives page to blog
-- Write integration tests for admin area
-- Create Google AMP versions for product & blog pages.
+- [x] Create sitemaps
+- [x] Cron task to update sitemaps frequently
+- [ ] Add archives page to blog
+- [ ] Create RSS feeds
+- [ ] Explore Google AMP versions for product/post pages
+- [ ] Write integration tests for admin area
 
 
 --------
+
+
+## Credits
+
+The Elixir/Phoenix community is really welcoming & responsive. There are tons of nice examples and packages that helped me with my learning. Here are some of the elixir packages that I am using in this project -
+
+- **Comeonin** for password hashing
+- **test.watch** for running tests
+- **Bamboo** for sending emails
+- **Cloudini** for uploading images to Cloudinary
+- **Quantum** for running cron tasks
+- **Curtail** for truncating HTML snippets
+- **XML builder** for generating Sitemaps
+- **Kerosene** for pagination
+
+
+--------
+
 
 For any questions/comments/suggestions, drop me a line at - [bharani@authenticpixels.com](mailto:bharani@authenticpixels.com) or send me a [tweet](https://twitter.com/bharani91).
 
 Thanks,
 
-Bharani -
+Bharani,
 **[Authentic Pixels - Free & Premium Web Resources](https://www.authenticpixels.com)**
