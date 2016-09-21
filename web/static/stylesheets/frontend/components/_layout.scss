@@ -10,6 +10,11 @@ body {
 }
 
 .main-container {
+
+  .alert {
+    margin-top: 1em;
+  }
+
   ul, ol, p {
     font-size: 1.4em;
     margin-bottom: 0.5em;
@@ -29,6 +34,9 @@ body {
     text-decoration: none;
     display: inline-block;
     border-bottom: 2px solid $primary;
+    @media(max-width: $screen-sm-min) {
+      border: none;
+    }
   }
 
   a.img-link {

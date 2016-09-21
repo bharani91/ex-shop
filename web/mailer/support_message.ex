@@ -26,7 +26,7 @@ defmodule Ap.Mailer.SupportMessage do
 
   defp base_email do
     new_email
-    |> from("Bharani M<bharani@authenticpixels.com>")
+    |> from("Bharani M <bharani@authenticpixels.com>")
     |> put_header("Reply-To", "bharani@authenticpixels.com")
     |> put_html_layout({Ap.MailerView, "base.html"})
   end
