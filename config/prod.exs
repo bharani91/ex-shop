@@ -77,3 +77,11 @@ config :cloudini,
   name: System.get_env("CLOUDINARY_NAME"),
   stub_requests: false,
   http_options: [timeout: 15000]
+
+config :sentry,
+  use_error_logger: true,
+  environment_name: :prod,
+  dsn: System.get_env("SENTRY_DSN"),
+  tags: %{
+    env: "production"
+  }

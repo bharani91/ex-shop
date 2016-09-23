@@ -1,5 +1,7 @@
 defmodule Ap.Router do
   use Ap.Web, :router
+  use Plug.ErrorHandler
+  use Sentry.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +9,7 @@ defmodule Ap.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
   end
 
   pipeline :admin do

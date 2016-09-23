@@ -18,7 +18,7 @@ defmodule Ap.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Ap, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex, :comeonin, :cloudini, :timex, :bamboo, :quantum]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex, :comeonin, :cloudini, :timex, :bamboo, :quantum, :sentry]]
   end
 
   # Specifies which paths to compile per environment.
@@ -47,6 +47,7 @@ defmodule Ap.Mixfile do
      {:bamboo, "~> 0.7"},
      {:xml_builder, "~> 0.0.6"},
      {:quantum, github: "c-rack/quantum-elixir"},
+     {:sentry, "~> 1.0"},
      {:kerosene, "~> 0.3.0"}]
   end
 
