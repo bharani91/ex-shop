@@ -1,5 +1,11 @@
 <footer class="main-footer">
   <p>
     &copy; 2016 Authentic Pixels. All Rights Reserved.
+    <%= if Ap.LayoutView.is_current_path?(@conn, "/") do %>
+      <br>
+      <small>
+        From the makers of <a href="https://www.resumonk.com" title="Online Resume (CV) Builder" target="_blank">Resumonk</a>.
+      </small>
+    <% end %>
   </p>
 </footer>

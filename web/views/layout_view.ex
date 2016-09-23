@@ -8,12 +8,16 @@ defmodule Ap.LayoutView do
   end
 
   def active_class(conn, path) do
-    current_path = Path.join(["/" | conn.path_info])
-    if path == current_path do
+    if is_current_path?(conn, path) do
       "active"
     else
       nil
     end
+  end
+
+  def is_current_path?(conn, path) do
+    current_path = Path.join(["/" | conn.path_info])
+    path == current_path
   end
 
   def render("meta.html", _assigns) do

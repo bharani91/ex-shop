@@ -16,6 +16,18 @@ import "slick-carousel/slick/slick.js";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import Prism from "prismjs";
+import "prismjs/components/prism-markup.js"
+import "prismjs/components/prism-css.js"
+import "prismjs/components/prism-javascript.js";
+import "prismjs/components/prism-elixir.js";
+import "prismjs/components/prism-bash.js";
+import "prismjs/components/prism-scss.js";
+import "prismjs/components/prism-ruby.js";
+
+import "prismjs/themes/prism-tomorrow.css";
+
+
 import Turbolinks from "turbolinks";
 Turbolinks.start()
 
@@ -25,6 +37,7 @@ $(function() {
       ga("send", "pageview", window.location.pathname)
     }
 
+    Prism.highlightAll();
 
     $("[data-slick]").slick();
 

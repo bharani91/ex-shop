@@ -11,6 +11,7 @@
     "jquery": "^3.0.0",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
+    "prismjs": "^1.5.1",
     "slick-carousel": "^1.6.0",
     "turbolinks": "^5.0.0"
   },
