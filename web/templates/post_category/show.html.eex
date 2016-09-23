@@ -1,0 +1,13 @@
+<section class="category-show">
+  <div class="page-header">
+    <h2 >
+      <%= @category.title %>
+    </h2>
+    <p>
+      <%= @category.description %>
+    </p>
+  </div>
+
+  <%= render Ap.PostView, "index.html", conn: @conn, posts: @category.posts %>
+
+</section>

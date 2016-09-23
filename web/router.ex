@@ -68,7 +68,7 @@ defmodule Ap.Router do
     resources "/contact", SupportMessageController, only: [:new, :create]
 
     # Blog
-    get "/blog/categories/:category", PostCategoryController, :index
+    get "/blog/categories/:slug", PostCategoryController, :show
     get "/blog/archives", PostArchiveController, :index
     resources "/blog", PostController, only: [:index, :show]
 

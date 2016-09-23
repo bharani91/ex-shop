@@ -13,8 +13,7 @@ config :ap, Ap.Endpoint,
   check_origin: false,
   watchers: [
     node: ["node_modules/.bin/webpack", "--watch", "--colors"]
-  ],
-  STORAGE_DIR: "priv/static"
+  ]
 
 
 # Watch static and templates for browser reloading.
