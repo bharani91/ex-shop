@@ -99,7 +99,7 @@ defmodule Ap.Tasks.RefreshSitemap do
   defp post_category_urls do
     PostCategory |> Repo.all |> Enum.map(fn(post_category) ->
       element(:url, %{}, [
-        element(:loc, "#{@host}#{post_category_path(Endpoint, :index, post_category.slug)}"),
+        element(:loc, "#{@host}#{post_category_path(Endpoint, :show, post_category.slug)}"),
         element(:changefreq, "daily"),
         element(:priority, 0.8)
       ])
