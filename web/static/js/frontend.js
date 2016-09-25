@@ -60,7 +60,9 @@ $(function() {
 
     $(this).parent().find("tr.active").removeClass("active");
     $(this).addClass("active");
-    $(".js-purchase-btn").attr("href", purchaseURL);
-    $(".js-purchase-btn span").text(price);
+
+    var tmpl = `<a href="${purchaseURL}" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">Buy Now <span>${price}</span></a>`
+
+    $(".js-purchase-btn-container").html(tmpl)
   })
 })

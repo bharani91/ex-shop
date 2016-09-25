@@ -79,9 +79,12 @@
             <% end %>
           </table>
 
-          <a href="<%= default_purchase_url(@product.variants) %>" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">
-            Buy Now <span><%= readable_price(@product.variants) %></span>
-          </a>
+          <div class="js-purchase-btn-container">
+            <a href="<%= default_purchase_url(@product.variants) %>" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">
+              Buy Now <span><%= readable_price(@product.variants) %></span>
+            </a>
+          </div>
+
 
         </div>
       </div>
