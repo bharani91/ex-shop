@@ -37,6 +37,10 @@ $(function() {
       ga("send", "pageview", window.location.pathname)
     }
 
+    if(window.GumroadOverlay) {
+      GumroadOverlay.init();
+    }
+
     Prism.highlightAll();
 
     $("[data-slick]").slick();

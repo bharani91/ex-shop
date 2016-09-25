@@ -28,8 +28,8 @@
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/frontend.css") %>">
 
+    <script src="https://gumroad.com/js/gumroad.js"></script>
     <script src="<%= static_path(@conn, "/js/frontend.js") %>" async></script>
-    <script src="https://gumroad.com/js/gumroad.js" async></script>
 
 
     <meta name="msvalidate.01" content="3F3F0DA3D9FF8AE3DA64D767717C782B" />
