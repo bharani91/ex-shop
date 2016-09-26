@@ -68,7 +68,7 @@ $(function() {
     $(this).addClass("active");
 
 
-    var tmpl = `<a href="${purchaseURL}" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">${btnText} <span>${price}</span></a>`
+    var tmpl = `<a href="${purchaseURL}" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn" data-gumroad-single-product="true">${btnText} <span>${price}</span></a>`
 
     $(".js-purchase-btn-container").html(tmpl)
   })
