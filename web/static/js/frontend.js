@@ -61,12 +61,17 @@ $(function() {
   $(document).on("click", ".js-variant-chooser tr", function(e) {
     var purchaseURL = $(this).data("purchase-url");
     var price = $(this).data("price");
+    var btnText = price == "Free" ? "Download" : "Buy Now";
 
+    console.log(price, btnText)
     $(this).parent().find("tr.active").removeClass("active");
     $(this).addClass("active");
 
-    var tmpl = `<a href="${purchaseURL}" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">Buy Now <span>${price}</span></a>`
+
+    var tmpl = `<a href="${purchaseURL}" class="btn btn-block btn-lg btn-primary purchase-btn js-purchase-btn">${btnText} <span>${price}</span></a>`
 
     $(".js-purchase-btn-container").html(tmpl)
   })
+
+  $(".js-variant-chooser tr:first-child").trigger("click");
 })

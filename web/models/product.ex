@@ -36,6 +36,13 @@ defmodule Ap.Product do
       order_by: [desc: p.inserted_at]
   end
 
+  def default_order(preloads \\ []) do
+    from p in __MODULE__,
+      order_by: [desc: p.inserted_at],
+      preload: ^preloads
+  end
+
+
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
