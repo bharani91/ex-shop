@@ -29,6 +29,8 @@ defmodule Ap.LayoutView do
 
   def render("social_meta.html", _assigns) do
     ~E{
+    <meta property="og:url" content="https://www.authenticpixels.com">
+
     <meta property="og:title" content="Free & Premium Web Resources">
     <meta property="og:image" content="https://www.authenticpixels.com/images/authentic-pixels-facebook.png">
     <meta property="og:description" content="We deliver free Bootstrap themes & templates, UI kits, mockups, landing pages & other web/design resources.">
@@ -42,7 +44,6 @@ defmodule Ap.LayoutView do
   def render("common_social_meta.html", _assigns) do
     ~E{
     <meta property="fb:app_id" content="123456789">
-    <meta property="og:url" content="https://www.authenticpixels.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Authentic Pixels">
     <meta property="og:locale" content="en_US">

@@ -38,7 +38,12 @@ defmodule Ap.ProductView do
 
   def render("social_meta.show.html", assigns) do
     product = assigns[:product]
+    conn = assigns.conn
+    url = Ap.Router.Helpers.url(conn) <> conn.request_path
+
+
     ~E{
+    <meta property="og:url" content="<%= url %>">
     <meta property="og:title" content="<%= product.page_title %> - Authentic Pixels">
     <meta property="og:description" content="<%= product.meta_description || product.extract %>">
     <meta property="og:image" content="<%= featured_image_url(product.product_images) %>">

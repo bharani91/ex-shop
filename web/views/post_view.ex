@@ -27,7 +27,11 @@ defmodule Ap.PostView do
 
   def render("social_meta.show.html", assigns) do
     post = assigns[:post]
+    conn = assigns.conn
+    url = Ap.Router.Helpers.url(conn) <> conn.request_path
+
     ~E{
+    <meta property="og:url" content="<%= url %>">
     <meta property="og:title" content="<%= post.page_title %> - Authentic Pixels">
     <meta property="og:description" content="<%= post.meta_description %>">
     <meta property="og:image" content="<%= post.featured_image %>">
