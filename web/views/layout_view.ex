@@ -43,7 +43,7 @@ defmodule Ap.LayoutView do
 
   def render("common_social_meta.html", _assigns) do
     ~E{
-    <meta property="fb:app_id" content="123456789">
+    <meta property="fb:app_id" content="529039707306292">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Authentic Pixels">
     <meta property="og:locale" content="en_US">
