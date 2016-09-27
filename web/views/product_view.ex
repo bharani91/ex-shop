@@ -39,7 +39,7 @@ defmodule Ap.ProductView do
   def render("social_meta.show.html", assigns) do
     product = assigns[:product]
     conn = assigns.conn
-    url = Ap.Router.Helpers.url(conn) <> conn.request_path
+    url = "https://www.authenticpixels.com" <> conn.request_path
 
 
     ~E{

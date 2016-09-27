@@ -28,7 +28,7 @@ defmodule Ap.PostView do
   def render("social_meta.show.html", assigns) do
     post = assigns[:post]
     conn = assigns.conn
-    url = Ap.Router.Helpers.url(conn) <> conn.request_path
+    url = "https://www.authenticpixels.com" <> conn.request_path
 
     ~E{
     <meta property="og:url" content="<%= url %>">
