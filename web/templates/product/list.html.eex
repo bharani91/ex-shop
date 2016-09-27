@@ -41,7 +41,11 @@
 
           <div class="product-cta">
             <%= link to: product_path(@conn, :show, product.slug), class: "btn btn-cta" do %>
-              Preview & Purchase &rarr;
+              <%= if product.base_price == 0 do %>
+                Preview & Download &rarr;
+              <% else %>
+                Preview & Purchase &rarr;
+              <% end %>
             <% end %>
           </div>
         </div><!-- col md 5 -->
