@@ -22,7 +22,7 @@
     <%= error_tag variant, :description %>
   </div>
 
-  <%= if variant.model.id do %>
+  <%= if variant.data && variant.data.id do %>
     <div class="form-group">
       <%= checkbox variant, :delete %>
       <%= label variant, :delete, "Delete?" %>

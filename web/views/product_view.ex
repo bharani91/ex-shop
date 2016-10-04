@@ -5,6 +5,10 @@ defmodule Ap.ProductView do
     img.secure_url || img.url
   end
 
+  def featured_image_url([]) do
+    ""
+  end
+
   def default_purchase_url([variant | _]), do: variant.purchase_url
   def default_purchase_url([]), do: ""
 
